@@ -14,7 +14,7 @@
 #import "RCTLog.h"
 
 //
-static NSString *const keyUpdateInfo = @"REACTNATIVECN_HOTUPDATE_INFO_KEY";
+static NSString *const keyUpdateInfo = @"REACTNATIVECN_HOTUPDATE_INFO_KEY"; 
 static NSString *const paramPackageVersion = @"packageVersion";
 static NSString *const paramLastVersion = @"lastVersion";
 static NSString *const paramCurrentVersion = @"currentVersion";
@@ -132,7 +132,8 @@ RCT_EXPORT_MODULE(RCTHotUpdate);
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSMutableDictionary *ret = [@{} mutableCopy];
+    //NSMutableDictionary *ret = [@{} mutableCopy];
+    NSMutableDictionary *ret = [ [NSMutableDictionary alloc] init];
     ret[@"downloadRootDir"] = [RCTHotUpdate downloadDir];
     ret[@"packageVersion"] = [RCTHotUpdate packageVersion];
     ret[@"isRolledBack"] = [defaults objectForKey:keyRolledBackMarked];
